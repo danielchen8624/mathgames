@@ -2,9 +2,9 @@
   "use strict";
 
   const LEVELS = [
-    { name: "Warm-up", max: 9, minScore: 0, noSolutionChance: 0 },
-    { name: "Focused", max: 12, minScore: 2, noSolutionChance: 0 },
-    { name: "Sharp", max: 20, minScore: 4, noSolutionChance: 0 },
+    { name: "Easy", max: 9, minScore: 0, noSolutionChance: 0 },
+    { name: "Medium", max: 12, minScore: 2, noSolutionChance: 0 },
+    { name: "Hard", max: 20, minScore: 4, noSolutionChance: 0 },
     { name: "Expert", max: 40, minScore: 6, noSolutionChance: 0.16 },
     { name: "Brutal", max: 99, minScore: 8, noSolutionChance: 0.34 },
   ];
