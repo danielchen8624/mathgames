@@ -88,9 +88,7 @@ h1 { margin: 6px 0; font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1; }
 .icon-button:hover { border-color: var(--accent); }
 svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.progress-track { height: 4px; margin: 20px 0; overflow: hidden; border-radius: 4px; background: #eceeea; }
-.progress-track span { display: block; width: 25%; height: 100%; background: var(--accent); transition: width .25s ease; }
-.status-area { min-height: 48px; }
+.status-area { min-height: 48px; margin-top: 20px; }
 .status-area p { margin: 0; color: var(--muted); }
 .feedback { margin-top: 8px; padding: 9px 12px; border-radius: 6px; background: var(--accent-soft); }
 .feedback.error { color: var(--danger); background: #f7e8e5; }

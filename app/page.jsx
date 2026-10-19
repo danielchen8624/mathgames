@@ -13,7 +13,7 @@ export default function Home() {
         <div>
           <p className="kicker">Number game</p>
           <h1>Make the target</h1>
-          <p className="subtitle">Use all four numbers once to reach the target.</p>
+          <p className="subtitle">Use all four numbers once to reach the target. Play unlimited rounds.</p>
         </div>
         <div className="session-stats" aria-label="Session statistics">
           <span>Streak <strong id="streakStat">0</strong></span>
@@ -61,8 +61,6 @@ export default function Home() {
           </div>
           <button className="icon-button" id="newPuzzleButton" type="button" aria-label="New puzzle" title="New puzzle"><RefreshIcon /></button>
         </div>
-
-        <div className="progress-track" aria-hidden="true"><span id="progressBar" /></div>
 
         <div className="status-area" aria-live="polite">
           <p id="instruction">Choose a number, an operation, then another number.</p>

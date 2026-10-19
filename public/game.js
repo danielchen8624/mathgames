@@ -36,7 +36,6 @@
     feedback: document.querySelector("#feedback"),
     targetValue: document.querySelector("#targetValue"),
     roundLabel: document.querySelector("#roundLabel"),
-    progress: document.querySelector("#progressBar"),
     steps: document.querySelector("#steps"),
     undo: document.querySelector("#undoButton"),
     reveal: document.querySelector("#revealButton"),
@@ -337,7 +336,6 @@
   function render() {
     els.targetValue.textContent = state.target;
     els.roundLabel.textContent = `${LEVELS[state.level].name} · Round ${state.round}`;
-    els.progress.style.width = `${((state.round - 1) % 4 + 1) * 25}%`;
     els.impossible.hidden = state.level < 3;
     els.undo.disabled = state.history.length === 0 || state.solved;
     renderBoard();
