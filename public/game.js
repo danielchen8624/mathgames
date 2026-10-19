@@ -2,7 +2,7 @@
   "use strict";
 
   const LEVELS = [
-    { name: "Easy", max: 9, minScore: 0, noSolutionChance: 0 },
+    { name: "Easy", max: 6, minScore: 0, noSolutionChance: 0 },
     { name: "Medium", max: 12, minScore: 2, noSolutionChance: 0 },
     { name: "Hard", max: 20, minScore: 4, noSolutionChance: 0 },
     { name: "Expert", max: 40, minScore: 6, noSolutionChance: 0.16 },
@@ -152,7 +152,8 @@
         const scarcityBonus = solutions.length <= 2 ? 2 : solutions.length <= 6 ? 1 : 0;
         const adjusted = best + scarcityBonus;
         if (state.level === 0 && adjusted <= 3) return result;
-        if (state.level > 0 && adjusted >= config.minScore) return result;
+        if (state.level === 1 && (adjusted >= config.minScore || Math.max(...numbers) >= 7)) return result;
+        if (state.level > 1 && adjusted >= config.minScore) return result;
         fallback = result;
       }
     }
