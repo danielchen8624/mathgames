@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="game-card" aria-labelledby="gameHeading">
+      <section className="game-card" aria-labelledby="gameHeading" style={{ display: "block", minHeight: 0 }}>
         <div className="game-topline">
           <div>
             <span className="round-label" id="roundLabel">Easy · Round 1</span>
@@ -67,7 +67,12 @@ export default function Home() {
           <div className="feedback" id="feedback" hidden />
         </div>
 
-        <div className="number-board" id="numberBoard" aria-label="Number cards" />
+        <div
+          className="number-board"
+          id="numberBoard"
+          aria-label="Number cards"
+          style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 12, minHeight: 0, width: "100%" }}
+        />
 
         <div className="operation-row" id="operationRow" aria-label="Operations">
           <button data-op="+" aria-label="Add">+</button>

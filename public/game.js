@@ -350,6 +350,9 @@
       const button = document.createElement("button");
       button.className = "number-card";
       button.type = "button";
+      button.style.width = "100%";
+      button.style.height = "126px";
+      button.style.display = "flex";
       button.dataset.id = card.id;
       button.classList.toggle("selected", card.id === state.selectedId);
       button.classList.toggle("fresh", Boolean(card.fresh));
