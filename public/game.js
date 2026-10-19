@@ -32,7 +32,6 @@
 
   const els = {
     board: document.querySelector("#numberBoard"),
-    template: document.querySelector("#numberCardTemplate"),
     instruction: document.querySelector("#instruction"),
     feedback: document.querySelector("#feedback"),
     targetValue: document.querySelector("#targetValue"),
@@ -349,19 +348,30 @@
   function renderBoard() {
     els.board.replaceChildren();
     state.cards.forEach((card, index) => {
-      const fragment = els.template.content.cloneNode(true);
-      const button = fragment.querySelector("button");
+      const button = document.createElement("button");
+      button.className = "number-card";
+      button.type = "button";
       button.dataset.id = card.id;
       button.classList.toggle("selected", card.id === state.selectedId);
       button.classList.toggle("fresh", Boolean(card.fresh));
       button.disabled = state.solved;
       button.setAttribute("aria-pressed", card.id === state.selectedId ? "true" : "false");
-      fragment.querySelector(".card-index").textContent = String(index + 1).padStart(2, "0");
-      fragment.querySelector(".card-value").textContent = display(card.value);
-      const expression = fragment.querySelector(".card-expression");
+      button.setAttribute("aria-label", `Number ${display(card.value)}`);
+
+      const cardIndex = document.createElement("span");
+      cardIndex.className = "card-index";
+      cardIndex.textContent = String(index + 1).padStart(2, "0");
+
+      const cardValue = document.createElement("strong");
+      cardValue.className = "card-value";
+      cardValue.textContent = display(card.value);
+
+      const expression = document.createElement("small");
+      expression.className = "card-expression";
       expression.textContent = card.expression === display(card.value) ? "" : card.expression;
+      button.append(cardIndex, cardValue, expression);
       button.addEventListener("click", () => chooseCard(card.id));
-      els.board.append(fragment);
+      els.board.append(button);
     });
   }
 
